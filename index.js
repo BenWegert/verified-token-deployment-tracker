@@ -139,7 +139,7 @@ const checkContracts = async (hashes) => {
 };
 
 const sendMessage = async (chatID, contract) => {
-  var message = `Address with balance of <b>${contract.balance} ETH</b> deployed <b>${contract.name} (${contract.symbol})</b> and has been verified\r\n<a href="https://etherscan.io/address/${contract.contractAddress}">details</a>`;
+  var message = `<b>${contract.name} (${contract.symbol}) ${contract.balance} ETH</b>\r\n<a href="https://etherscan.io/address/${contract.contractAddress}">details</a>`;
   try {
     bot.sendMessage(chatID, message, { parse_mode: "html" });
   } catch (e) {
